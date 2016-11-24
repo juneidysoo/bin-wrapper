@@ -202,6 +202,7 @@ BinWrapper.prototype.findExisting = function (cb) {
 
 BinWrapper.prototype.download = function (cb) {
 	var files = osFilterObj()(this.src());
+	console.log("TEST", process.env.STRICT_SSL);
 	var download = new Download()({
 		extract: true,
 		mode: '755',
