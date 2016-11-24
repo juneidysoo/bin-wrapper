@@ -205,7 +205,8 @@ BinWrapper.prototype.download = function (cb) {
 	var download = new Download()({
 		extract: true,
 		mode: '755',
-		strip: this.opts.strip
+		strip: this.opts.strip,
+		rejectUnauthorized: process.env.STRICT_SSL === void 0 || process.env.STRICT_SSL === 'true'
 	});
 
 	if (!files.length) {
